@@ -15,9 +15,9 @@ import java.util.List;
 public interface UserMapper {
     int register( Users users );
 
-    int deleteUser( Users users );
+    int deleteUser( int id );
 
     int updateUser( Users users );
 
-    List<Users> selectUsersByName(Users users );
+    List<Users> selectUsersByName(String username );
 }

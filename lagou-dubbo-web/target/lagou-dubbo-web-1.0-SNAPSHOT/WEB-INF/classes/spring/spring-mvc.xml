@@ -13,6 +13,7 @@
 
     <!--json转换器-->
     <mvc:annotation-driven>
+
         <mvc:message-converters register-defaults="true">
             <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
                 <property name="supportedMediaTypes" value="application/json"/>
@@ -25,7 +26,7 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
+    <mvc:default-servlet-handler/>
     <!--1.服务提供方在zookeeper中的“别名”-->
     <dubbo:application name="lagou-dubbo-web"/>
     <!--2.注册中心的地址-->

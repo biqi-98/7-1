@@ -37,9 +37,9 @@ public class UserAction {
     }
 
     @RequestMapping("/deleteUser")
-    public String deleteUser( Users users ){
+    public String deleteUser( int id ){
         try {
-            userService.deleteUser(users);
+            userService.deleteUser(id);
             return "删除成功！";
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,9 +59,9 @@ public class UserAction {
     }
 
     @RequestMapping("/selectUsersByName")
-    public List<Users> selectUsersByName( Users users ){
+    public List<Users> selectUsersByName( String username ){
         try {
-            List<Users> usersList = userService.selectUsersByName(users);
+            List<Users> usersList = userService.selectUsersByName(username);
             return usersList;
         } catch (Exception e) {
             e.printStackTrace();
