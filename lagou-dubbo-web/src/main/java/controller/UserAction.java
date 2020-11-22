@@ -38,17 +38,35 @@ public class UserAction {
 
     @RequestMapping("/deleteUser")
     public String deleteUser( Users users ){
-        return "失败";
+        try {
+            userService.deleteUser(users);
+            return "删除成功！";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "失败";
+        }
     }
 
     @RequestMapping("/updateUser")
     public String updateUser( Users users ){
-        return "失败";
+        try {
+            userService.updateUser(users);
+            return "成功！";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "失败";
+        }
     }
 
     @RequestMapping("/selectUsersByName")
     public List<Users> selectUsersByName( Users users ){
-        return null;
+        try {
+            List<Users> usersList = userService.selectUsersByName(users);
+            return usersList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }
