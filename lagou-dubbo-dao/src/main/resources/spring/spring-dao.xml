@@ -10,10 +10,10 @@
 
     <!--2.数据连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="url" value="jdbc:mysql://192.168.203.129:3306/smd?serverTimezone=GMT"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ssm_lagou_edu?serverTimezone=GMT"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="username" value="root"/>
-        <property name="password" value="123123"/>
+        <property name="password" value="123456"/>
         <property name="maxActive" value="10"/>
         <property name="minIdle" value="5"/>
     </bean>
