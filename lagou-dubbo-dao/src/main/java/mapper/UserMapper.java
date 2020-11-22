@@ -1,6 +1,7 @@
 package mapper;
 
 import entity.Users;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,5 +20,5 @@ public interface UserMapper {
 
     int updateUser( Users users );
 
-    List<Users> selectUsersByName(String username );
+    List<Users> selectUsersByName(@Param(value="username")String username );
 }

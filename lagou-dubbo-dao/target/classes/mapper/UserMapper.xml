@@ -9,20 +9,19 @@
     </insert>
 
     <delete id="deleteUser">
-        delete from users where id =#{id}
+        delete from users where uid =#{id}
     </delete>
 
     <update id="updateUser">
-        update users set username=#{username},password=#{password},phone=#{phone},createtime=#{createtime} where id =#{id}
+        update users set username=#{username},password=#{password},phone=#{phone},createtime=#{createtime} where uid =#{uid}
     </update>
 
-    <select id="selectUsersByName">
-        select * from users
-        <where>
+    <select id="selectUsersByName" resultType="entity.Users">
+        select * from users where 1=1
+
             <if test="username != null and username != '' ">
                 and username like  concat('%',#{username},'%')
             </if>
-        </where>
     </select>
 
 </mapper>

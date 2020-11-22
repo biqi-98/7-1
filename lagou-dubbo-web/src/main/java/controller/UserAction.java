@@ -59,9 +59,9 @@ public class UserAction {
     }
 
     @RequestMapping("/selectUsersByName")
-    public List<Users> selectUsersByName( String username ){
+    public List<Users> selectUsersByName( Users users ){
         try {
-            List<Users> usersList = userService.selectUsersByName(username);
+            List<Users> usersList = userService.selectUsersByName(users.getUsername());
             return usersList;
         } catch (Exception e) {
             e.printStackTrace();

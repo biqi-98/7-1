@@ -10,6 +10,7 @@ import service.UserService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @BelongsProject: lagou-dubbo
@@ -29,6 +30,31 @@ public class TestService {
         String time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         Users user = new Users("a2","2","22",time);
         userService.register(user);
+        System.out.println("注册成功！");
+    }
+
+    @Test
+    public void delete(){
+        String time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        Users user = new Users("a2","2","22",time);
+        userService.deleteUser(2);
+        System.out.println("注册成功！");
+    }
+
+    @Test
+    public void select(){
+        String time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        Users user = new Users("a2","2","22",time);
+        List<Users> usersList = userService.selectUsersByName("a");
+        System.out.println(usersList);
+    }
+
+    @Test
+    public void update(){
+        String time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        Users user = new Users("aaa","2","22",time);
+        user.setUid(2);
+        userService.updateUser(user);
         System.out.println("注册成功！");
     }
 }
